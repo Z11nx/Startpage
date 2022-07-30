@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="bg-image"></div>
+	<div class="window">
+		<div class="front-image"></div>
+		<div class="title">
+			<div id="titleb">Startpage....</div>
+			<div id="clock"></div>
+		</div>
+		<div class="window-background-area">
+		<div class="center-divs">
+			<div class="category">
+				<div class="category-title">Music</div>
+				<div class="category-content"><a href="https://4chan.org/mu">/mu/</a> <a href="https://www.youtube.com/">YouTube</a></div>
+				<div class="category-title">Dev</div>
+				<div class="category-content"><a href="https://github.com/">Github</a> <a href="https://4chan.org/g">/g/</a> <a href="https://leetcode.com/">Leetcode</a></div>
+				<div class="category-title">School</div>
+				<div class="category-content"><a href="https://outlook.live.com/owa/">Outlook</a> <a href="https://pirateport.ecu.edu/connect/#/login">Blackboard</a></div>
+				<div class="category-title">Private</div>
+				<div class="category-content"><a href="https://www.youtube.com/">Youtube</a> <a href="https://4chan.org/">4chan</a> <a href="https://1337x.to/">1337x</a></div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="pixeloverlay"></div>
+	<div class="vignette"></div>
+	<script>
+		var clock=document.getElementById("clock");
+		function updateClock(){
+			var date=new Date();
+			date.setHours(date.getHours()+0)
+			var hours = date.getHours().toString();
+			var minutes = date.getMinutes().toString();
+			var seconds = date.getSeconds().toString();
+			if (hours.length==1){
+				hours="0"+hours
+			}
+			if (minutes.length==1){
+				minutes="0"+minutes
+			}
+			if (seconds.length==1){
+				seconds="0"+seconds
+			}
+			clock.innerHTML=hours+":"+minutes+":"+seconds;
+		}
+		updateClock();
+		setInterval(updateClock,1000);
+	</script>
+</body>
+</html>

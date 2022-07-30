@@ -1,0 +1,157 @@
+:root {
+        --bg-image: url(/pictures/tree_fog.jpg);
+        --front-image: url(/pictures/duster.jpg);
+        --window-color: rgb(160, 131, 98);
+        --window-background-color: rgb(255, 213, 164);
+
+        --title-font-size: 20px;
+        --title-color: black;
+        --category-title-font-size: 24px;
+        --category-content-font-size: 15px;
+        --link-color: black;
+
+        --pixeloverlay-exists: visible;
+        --pixeloverlay-itensity: 0.1;
+        --pixeloverlay-resolution: 1;
+
+        --vignette-overlay-exists: visible;
+        --vignette-radius-size: 50%;
+        --vignette-transparency: 0.5;
+}
+
+
+.bg-image {
+        background-image: var(--bg-image);
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+.window {
+        height: 485px;
+        width: 960px;
+        background-color: var(--window-color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+#clock {
+        text-align: right;
+        position: relative;
+        top: 3%;
+        right: 5px;
+}
+
+.center-divs {
+        display: table;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+}
+
+.front-image {
+        position: inherit;
+        width: 339px;
+        height: 446px;
+        left: 5px;
+        top: 34px;
+        background-image: var(--front-image);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+.title {
+        font-size: var(--title-font-size);
+        position: inherit;
+        width: 949px;
+        height: 25px;
+        left: 5px;
+        top: 5px;
+        color: var(--title-color);
+}
+
+#titleb {
+        position: inherit;
+        top: 3px;
+        left: 5px;
+}
+
+.window-background-area {
+        position: inherit;
+        width: 606px;
+        height: 446px;
+        left: 349px;
+        top: 34px;
+        background-color: var(--window-background-color)
+}
+
+.category {
+        height: 100%;
+        width: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        position: relative;
+        top: -25px;
+}
+
+.category-title {
+        font-size: var(--category-title-font-size);
+        font-weight: normal;
+        width:605px;
+        text-align: center;
+        position: relative;
+        margin-top: 20px;
+}
+
+.category-content {
+        font-size: var(--category-content-font-size);
+        width:605px;
+        position:relative;
+        text-align: center;
+        font-weight: lighter;
+        margin-top: 5px;
+}
+
+a {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 10px;
+        text-decoration: none;
+        color: var(--link-color);
+}
+
+.pixeloverlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+        background: repeating-linear-gradient(90deg,rgba(0, 0, 255, var(--pixeloverlay-itensity)),rgba(0, 0, 255, var(--pixeloverlay-itensity)) calc(var(--pixeloverlay-resolution)*1px),rgba(255, 0, 0, var(--pixeloverlay-itensity)) calc(var(--pixeloverlay-resolution)*1px),rgba(255, 0, 0, var(--pixeloverlay-itensity)) calc(var(--pixeloverlay-resolution)*2px),rgba(0, 255, 0, var(--pixeloverlay-itensity)) calc(var(--pixeloverlay-resolution)*2px),rgba(0, 255, 0, var(--pixeloverlay-itensity)) calc(var(--pixeloverlay-resolution)*3px)),
+        repeating-linear-gradient(0deg,rgba(0, 0, 0, var(--pixeloverlay-itensity)),rgba(0, 0, 0, var(--pixeloverlay-itensity)) calc(var(--pixeloverlay-resolution)*1px), rgba(255, 255, 255, 0) 1px,rgba(255, 255, 255, 0) calc(var(--pixeloverlay-resolution)*3px));
+        visibility: var(--pixeloverlay-exists);
+}
+
+.vignette {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+        visibility: var(--vignette-overlay-exists);
+        background: radial-gradient(transparent, transparent var(--vignette-radius-size), rgba(0, 0, 0, var(--vignette-transparency)));
+}
+
+body, html {
+        height: 100%;
+        margin: 0;
+        font-family: w95;
+        color: black;
+        position: center;
+        background: #000;
+}
